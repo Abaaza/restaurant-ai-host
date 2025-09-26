@@ -1,0 +1,47 @@
+service: ai-restaurant-backend
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  region: us-east-1
+  environment:
+    NODE_ENV: production
+    PORT: 5000
+    SUPABASE_URL: ${env:SUPABASE_URL}
+    SUPABASE_ANON_KEY: ${env:SUPABASE_ANON_KEY}
+    SUPABASE_SERVICE_KEY: ${env:SUPABASE_SERVICE_KEY}
+    ELEVENLABS_API_KEY: ${env:ELEVENLABS_API_KEY}
+    ELEVENLABS_AGENT_ID: ${env:ELEVENLABS_AGENT_ID}
+    WEBHOOK_BASE_URL: ${env:WEBHOOK_BASE_URL}
+    ELEVENLABS_WEBHOOK_SECRET: ${env:ELEVENLABS_WEBHOOK_SECRET}
+    JWT_SECRET: ${env:JWT_SECRET}
+    API_KEY: ${env:API_KEY}
+    CORS_ORIGIN: ${env:CORS_ORIGIN}
+    FRONTEND_URL: ${env:FRONTEND_URL}
+    RESTAURANT_NAME: ${env:RESTAURANT_NAME}
+
+plugins:
+  - serverless-http
+  - serverless-plugin-typescript
+  - serverless-offline
+
+functions:
+  api:
+    handler: src/lambda.handler
+    events:
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
+      - http:
+          path: /
+          method: ANY
+          cors: true
+    timeout: 30
+    memorySize: 1024
+
+custom:
+  serverless-offline:
+    httpPort: 5000
+    noPrependStageInUrl: true

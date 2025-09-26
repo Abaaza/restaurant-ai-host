@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 25 20% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 25 20% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 20% 20%;
+    --primary: 25 95% 53%; /* Warm Amber #F59E0B */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 24 100% 50%; /* Rich Orange #FF8C00 */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 30 20% 95%;
+    --muted-foreground: 25 15% 40%;
+    --accent: 32 95% 44%; /* Deep Brown-Orange #D97706 */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 25 95% 53%;
+    --radius: 1rem; /* 2xl rounded corners */
+    --sidebar-background: 30 30% 98%;
+    --sidebar-foreground: 25 20% 20%;
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 30 30% 95%;
+    --sidebar-accent-foreground: 25 20% 20%;
+    --sidebar-border: 30 15% 88%;
+    --sidebar-ring: 25 95% 53%;
+  }
+
+  .dark {
+    --background: 30 15% 10%;
+    --foreground: 30 20% 98%;
+    --card: 30 15% 13%;
+    --card-foreground: 30 20% 98%;
+    --popover: 30 15% 13%;
+    --popover-foreground: 30 20% 98%;
+    --primary: 25 95% 60%; /* Warm Amber lighter for dark mode */
+    --primary-foreground: 30 15% 10%;
+    --secondary: 24 100% 60%; /* Rich Orange lighter for dark mode */
+    --secondary-foreground: 30 15% 10%;
+    --muted: 30 19% 20%;
+    --muted-foreground: 30 20% 65%;
+    --accent: 32 95% 54%; /* Deep Brown-Orange lighter for dark mode */
+    --accent-foreground: 30 15% 10%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 30 20% 98%;
+    --border: 30 19% 20%;
+    --input: 30 19% 20%;
+    --ring: 25 95% 60%;
+    --sidebar-background: 30 15% 12%;
+    --sidebar-foreground: 30 20% 98%;
+    --sidebar-primary: 25 95% 60%;
+    --sidebar-primary-foreground: 30 15% 10%;
+    --sidebar-accent: 30 15% 18%;
+    --sidebar-accent-foreground: 30 20% 98%;
+    --sidebar-border: 30 19% 20%;
+    --sidebar-ring: 25 95% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

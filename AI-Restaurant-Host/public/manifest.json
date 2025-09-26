@@ -1,0 +1,16 @@
+{
+  "name": "AI Dental Voice Agent",
+  "short_name": "Dental AI",
+  "description": "AI-powered dental receptionist voice assistant",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0070f3",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
